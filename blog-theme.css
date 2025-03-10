@@ -104,7 +104,6 @@ nav a {
   	color: var(--heading-color);
     border-radius: 4px;
     border: 2px solid var(--background-color-secondary);
-  	flex-grow: 1;
   	text-align: center;
 }
 
