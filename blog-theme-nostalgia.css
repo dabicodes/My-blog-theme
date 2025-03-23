@@ -6,8 +6,8 @@
     --font-scale: 1.2em;
     --background-color: #F6F1F1;
   	--background-color-secondary:#e1dfdf;
-    --button-gradient:linear-gradient(var(--background-color) 43%, var(--background-color-secondary) 47%);
-    --button-gradient-hover:linear-gradient(rgba(158,197,218,.3)  43%,  rgba(86,134,160,.3) 47%);
+    --button-gradient:linear-gradient(var(--background-color) 48%, var(--background-color-secondary) 50%, var(--background-color) 99%);
+    --button-gradient-hover:linear-gradient(rgba(158,197,218,.3)  48%,  rgba(86,134,160,.3) 50%, rgba(158,197,218,.3)  99%);
 	--heading-color: #3f728e;
   	--text-color: #3A4247;
   	--link-color: #5585A1;
