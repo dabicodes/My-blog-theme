@@ -35,6 +35,7 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     box-shadow: 7px 0px 30px -14px var(--text-color);
+    position: relative;
    
 }
 
@@ -135,6 +136,39 @@ nav a:hover{
     background: var(--button-gradient)
 }
 
+nav p.close{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width:40px;
+    height: 18px;
+    margin: 0;
+    top: 1px;
+    right: 10px;
+    background: linear-gradient(#ebb8af 40%, #c9422a 50%, #ebb8af 99%);
+    border: 1px solid var(--background-color-secondary);
+    outline: 1px solid var(--text-color);
+    border-top: none;
+    border-radius: 0px 4px ;
+    font-weight: 800;
+    font-size: .8rem;
+    text-align: center;
+    text-shadow: 0 0 2px #000000;
+    cursor: pointer;
+}
+
+
+nav p.close a{
+    border: none;
+    outline: none;
+    padding: 0;
+    color: white;
+}
+
+nav p.close a:hover{
+    background: initial;
+}
+
 p{
     margin:10px 0px;
 }
@@ -187,7 +221,6 @@ blockquote {
     margin-left: 0px;
     margin-right: 0px;
 }
-
 
 table {
     border-collapse: collapse;
