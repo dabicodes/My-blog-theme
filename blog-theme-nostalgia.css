@@ -377,7 +377,7 @@ ul.blog-posts li a:visited {
 
 .segment-container-title {
     position: absolute;
-    top: -27px;
+    top: -25px;
     left: 15px;
     background: var(--background-color);
     font-size: .9rem;
