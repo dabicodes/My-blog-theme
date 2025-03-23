@@ -143,13 +143,13 @@ nav p.close{
     width:40px;
     height: 18px;
     margin: 0;
-    top: 1px;
+    top: 0px;
     right: 10px;
     background: linear-gradient(#ebb8af 40%, #c9422a 50%, #ebb8af 99%);
     border: 1px solid var(--background-color-secondary);
     outline: 1px solid var(--text-color);
     border-top: none;
-    border-radius: 0px 4px ;
+    border-radius: 0 0 4px 4px ;
     font-weight: 800;
     font-size: .8rem;
     text-align: center;
@@ -465,7 +465,4 @@ footer a:visited {
         --blockquote-color: #5599cc;
     }
 
-    body{
-        border: 1px solid var(--background-color-secondary);
-    }
 }
