@@ -39,6 +39,11 @@ body {
    
 }
 
+body:hover {
+    border-image: none !important;
+    border-width: 1px !important;
+}
+
 main {
     margin-bottom: 20px;
  	padding: 1.5rem;
