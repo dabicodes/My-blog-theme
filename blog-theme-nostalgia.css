@@ -186,10 +186,6 @@ mark {
     background-color: var(--heading-color);
 }
   
-ul {
-    list-style: symbols(cyclic '>');
-}
-  
 b {
     color: var(--heading-color);
 }
@@ -218,7 +214,7 @@ code {
 }
 
 blockquote {
-    border-left: 1px solid var(--heading-color);
+    border-left: 1px solid var(--text-color);
     background: var(--background-color-secondary);
     color: var(--text-color);
     padding: 1px 10px;
@@ -227,6 +223,39 @@ blockquote {
     margin-right: 0px;
 }
 
+details p{
+    padding-left: 25px;
+}
+details li p {
+    padding: 0;
+}
+
+summary{
+    padding: 5px;
+    cursor: pointer;
+    border: 2px solid var(--background-color-secondary);
+    border-radius: 4px;
+}
+summary::marker{
+    margin-left: 2px;
+}
+
+.curiosity summary{
+    font-size: 20px;
+}
+
+.curiosity summary:focus{
+    border-color: var(--heading-color);
+}
+
+.curiosities{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.curiosity{
+    width: 100%;
+}
 table {
     border-collapse: collapse;
     width: 100%;
@@ -395,7 +424,6 @@ ul.blog-posts li a:visited {
     padding:10px 35px;
     font-size: .9rem;
 }
-
 .end-notes::before {
     content: "[End notes]";
     position: absolute;
@@ -453,6 +481,20 @@ footer a:visited {
         width: auto;
         margin:0;
     }
+}
+
+@media only screen and (max-width:412px) {
+    details p{
+        padding-left: 0px;
+    }
+    :root{
+        --font-scale: 1em;
+    }
+    main{
+        font-size: 1.1em;
+        padding: 0.9rem;
+    }
+
 }
 
 /* Dark Mode */
