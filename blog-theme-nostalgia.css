@@ -1,8 +1,8 @@
 :root {
-    --width: 720px;
+    --width: 800px;
     --font-main: Sans-serif;
     --font-secondary:Sans-serif;
-  	--font-title:Helvetica;
+  	--font-title:Verdana;
     --font-scale: 1.2em;
     --background-color: #F6F1F1;
   	--background-color-secondary:#e1dfdf;
@@ -15,6 +15,8 @@
   	--code-background-color: #F6F1F1;
   	--code-color: #4788AD;
   	--blockquote-color: #143041;
+    --muted-text-color: #3A4247BD;
+  	--shadow-theader-color:#e2e2e27a
 }
 
 html{
@@ -40,13 +42,13 @@ body {
 }
 
 body:hover {
-    border-image: none !important;
-    border-width: 1px !important;
+  border-image: none !important;
+  border-width: 1px !important;
 }
 
 main {
     margin-bottom: 20px;
- 	padding: 1.5rem;
+ 	padding: 1rem 3rem;
   	border-top: 1px solid var(--text-color);
     font-size: 1.1rem;
     background-color:var(--background-color)
@@ -101,7 +103,7 @@ li::marker {
 }
 
 .title h1 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--text-color);
     display: inline;
     align-self: center;
@@ -110,10 +112,12 @@ li::marker {
   }
 
 .title::before {
+  	font-size: 1.2em;
     content: '🌏';
     color: var(--code-color);
     text-align: center;
     align-self: center;
+  	padding:5px;
 }
 
 nav p{
@@ -168,6 +172,7 @@ nav p.close a{
     outline: none;
     padding: 0;
     color: white;
+    width: 100%;
 }
 
 nav p.close a:hover{
@@ -175,7 +180,19 @@ nav p.close a:hover{
 }
 
 p{
-    margin:10px 0px;
+    margin:25px 0px;
+}
+
+del {
+  background: var(--text-color);
+  font-style: normal !important;
+  text-decoration: none;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: default;
+}
+del:hover {
+  background: var(--background-color);
 }
   
 strong{
@@ -184,6 +201,10 @@ strong{
   
 mark {
     background-color: var(--heading-color);
+}
+  
+ul {
+    list-style: symbols(cyclic '>');
 }
   
 b {
@@ -214,7 +235,7 @@ code {
 }
 
 blockquote {
-    border-left: 1px solid var(--text-color);
+    border-left: 1px solid var(--heading-color);
     background: var(--background-color-secondary);
     color: var(--text-color);
     padding: 1px 10px;
@@ -240,22 +261,6 @@ summary::marker{
     margin-left: 2px;
 }
 
-.curiosity summary{
-    font-size: 20px;
-}
-
-.curiosity summary:focus{
-    border-color: var(--heading-color);
-}
-
-.curiosities{
-    display: flex;
-    flex-wrap: wrap;
-    gap:20px;
-}
-.curiosity{
-    width: 100%;
-}
 table {
     border-collapse: collapse;
     width: 100%;
@@ -265,7 +270,8 @@ table,
 th,
 td {
     border: 1px dashed var(--heading-color);
-    padding: 10px;
+    padding: 5px;
+  	font-weight: normal;
 }
 
 hr{
@@ -392,7 +398,7 @@ ul.blog-posts li a:visited {
 }
 
 .container img{
-	width:25%
+	min-width:25%
 }
 
 .segment-container{
@@ -424,13 +430,59 @@ ul.blog-posts li a:visited {
     padding:10px 35px;
     font-size: .9rem;
 }
+
+/*Playlist styles*/
+
+
+.pl td {
+  border: 1px solid var(--background-color-secondary);
+  padding: 1px 5px;
+}
+
+.pl >  table{
+  font-size: 0.88rem;
+  border: none;
+  cursor: default;
+  color: var(--muted-text-color);
+  overflow: scroll;
+  display: block;
+  padding: 0;
+}
+
+.pl th, .pl td {
+border-right: 2px solid var(--background-color-secondary);
+  padding: 1px 5px;
+}
+
+.pl td:first-child, .pl td:nth-child(2) {
+color: var(--text-color);
+}
+
+.pl thead {
+	background: linear-gradient(to top, transparent ,var(--shadow-theader-color) 99%);
+  border: 1px solid var(--background-color-secondary);
+}
+
+.pl tbody > tr:hover {
+  background: #5585A13B;
+}
+
+.pl a {
+  color: var(--text-color);
+}
+
+.pl a:visited {
+  color: var(--text-color);
+}
+
+/*End notes styles*/
+
 .end-notes::before {
     content: "[End notes]";
     position: absolute;
-    bottom: -1rem;
+    bottom: -0.8rem;
     background-color: var(--background-color);
     color: var(--heading-color);
-    padding: 0.3rem;
     right: 1rem;
 }
   
@@ -440,13 +492,13 @@ ul.blog-posts li a:visited {
     margin: .5rem 0;
     border-radius: 3px;
     position: relative;
-    padding-bottom: 0;
 }
 
 footer {
     padding: 25px 0;
     text-align: center;
     opacity: 0.6;
+ 
 }
 footer a{
     color: var(--link-color);
@@ -456,10 +508,31 @@ footer a:visited {
     color: var(--visited-color);
 }  
 
+.footnotes{
+	border: 2px solid var(--background-color-secondary);
+  	border-radius: 3px;
+  	margin-top: 20px;
+  	position: relative;
+}
+
+.footnotes::before {
+  content: "[Footnotes]";
+  position: absolute;
+  bottom: -0.8rem;
+  background-color: var(--background-color);
+  color: var(--heading-color);
+  right: 1rem;
+}
+
 @media only screen and (max-width:767px) {
     main {
         margin-bottom: 10px;
+      	padding: 20px 15px;
     }
+  
+  	html{
+  		padding:0
+  	}
 
     ul.blog-posts li {
         flex-direction: column;
@@ -483,20 +556,6 @@ footer a:visited {
     }
 }
 
-@media only screen and (max-width:412px) {
-    details p{
-        padding-left: 0px;
-    }
-    :root{
-        --font-scale: 1em;
-    }
-    main{
-        font-size: 1.1em;
-        padding: 0.9rem;
-    }
-
-}
-
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -510,6 +569,11 @@ footer a:visited {
         --code-background-color: #2d2d2d;
         --code-color: #77ddff;
         --blockquote-color: #5599cc;
+        --muted-text-color:#e2e2e299;
+      	--shadow-theader-color:#3A42474D;
     }
-
+	
+  	.pl thead {
+		background: linear-gradient(transparent ,var(--shadow-theader-color) 99%);
+	}
 }
