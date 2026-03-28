@@ -21,24 +21,28 @@
 
 html{
     padding:1rem;
-    background: linear-gradient(var(--background-color),var(--background-color-secondary));
+    background-image: url(https://dabiweb.neocities.org/img/clouds.jpg);
+    background-size: cover;
 }
 
 body {
-    border: 1px solid var(--text-color);
+    border: 1px solid rgb(182, 214, 231);
     border-radius: 6px;
     font-family: var(--font-main);
     font-size: var(--font-scale);
     margin: auto;
     max-width: var(--width);
     text-align: left;
-    background-color: var(--background-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.5;
     color: var(--text-color);
-    box-shadow: 7px 0px 30px -14px var(--text-color);
     position: relative;
+    outline: 1px solid var(--background-color-secondary);
+    box-shadow: 0px 0px 30px -14px var(--text-color);
+    border: 1px solid rgb(182, 214, 231);
+    background: rgba(196, 196, 196, 0.22);
+    backdrop-filter: blur(0.7px);
    
 }
 
@@ -48,11 +52,15 @@ body:hover {
 }
 
 main {
-    margin-bottom: 20px;
  	padding: 1rem 4rem;
-  	border-top: 1px solid var(--text-color);
     font-size: 1.1rem;
-    background-color:var(--background-color)
+    background-color:var(--background-color);
+    margin: 0px 8px;
+    border: 1px solid var(--text-color);
+    border-top: none;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0px 2px 2px 1px var(--background-color-secondary);
 }
 
 iframe{
@@ -97,11 +105,10 @@ li::marker {
     display: flex;
     text-decoration: none;
     padding:.2rem;
-    background:linear-gradient(53deg, rgba(158,197,218,1) 0%, rgba(86,134,160,1) 39%, rgba(63,114,142,1) 100%);
-    border:1px solid rgb(182, 214, 231);
     border-radius: 4px 4px 0 0;
     text-shadow:  1px 1px 10px var(--background-color);
-    outline: 1px solid;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
 }
 
 .title h1 {
@@ -110,7 +117,8 @@ li::marker {
     display: inline;
     align-self: center;
     margin: 0;
-    padding:5px 0px
+    padding:5px 0px;
+    text-shadow: 0px 0px 11px #fff, 0px 0px 11px #fff;
   }
 
 .title::before {
@@ -127,8 +135,14 @@ nav p{
     flex-flow: wrap;
     gap: .3rem;
     font-size:1rem;
-    margin:6px;
-    padding: 4px;
+    margin: 0 8px;
+    padding: 10px 6px;
+    background: var(--background-color);
+    border: 1px solid var(--text-color);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 0px 0px 2px 1px var(--background-color-secondary);
+
 }
 
 nav a {
@@ -151,21 +165,23 @@ nav p.close{
     display: flex;
     justify-content: center;
     position: absolute;
-    width:40px;
-    height: 18px;
+   	width: 44px;
+	height: 22px;
     margin: 0;
+  	padding:0;
     top: 0px;
     right: 10px;
     background: linear-gradient(#ebb8af 40%, #c9422a 50%, #ebb8af 99%);
-    border: 1px solid var(--background-color-secondary);
-    outline: 1px solid var(--text-color);
+    border: 1px solid  #686868;
     border-top: none;
     border-radius: 0 0 4px 4px ;
     font-weight: 800;
-    font-size: .8rem;
+    font-size: 1.2rem;
     text-align: center;
-    text-shadow: 0 0 2px #000000;
+    text-shadow: 0px 0px 2px #000000;
+    -webkit-text-stroke: 1px #686868;
     cursor: pointer;
+    box-shadow: none;
 }
 
 
@@ -174,7 +190,10 @@ nav p.close a{
     outline: none;
     padding: 0;
     color: white;
-    width: 100%;
+    width: min-content;
+    height: 100%;
+    margin: -8px;
+   
 }
 
 p.close:hover {
@@ -541,9 +560,12 @@ html[lang="es"] .end-notes::before {
 }
 
 footer {
-    padding: 25px 0;
+    padding: 7px 0;
+    font-size: 1rem;
     text-align: center;
     opacity: 0.6;
+    color: var(--text-color);
+    text-shadow: 0px 0px 4px #fff,  0px 0px 4px #fff,  0px 0px 4px #fff;
  
 }
 footer a{
@@ -551,7 +573,7 @@ footer a{
 }
 
 footer a:visited {
-    color: var(--visited-color);
+    color: var(--text-color);
 }  
 
 .footnotes{
@@ -619,12 +641,38 @@ footer a:visited {
         --muted-text-color:#e2e2e299;
       	--shadow-theader-color:#3A42474D;
     }
+
+    html{
+        background-image: url(https://dabiweb.neocities.org/img/night-sky.jpg);
+      background-size:contain
+    }
 	
   	.pl thead {
 		background: linear-gradient(transparent ,var(--shadow-theader-color) 99%);
 	}
+    
+    body{
+        outline: 1px solid var(--text-color);
+        box-shadow: 0px 0px 30px -14px var(--background-color);
+    }
   
-  .title{
-  	outline: none;
-  }
+    .title{
+  	    outline: none;
+    }
+
+    .title h1{
+        color: var(--background-color);
+    }
+
+    footer {
+        color: var(--background-color);
+    }
+
+    footer a:visited {
+        color: var(--background-color);
+    }  
+
+    nav p{
+        border-color: rgb(182, 214, 231);
+    }
 }
