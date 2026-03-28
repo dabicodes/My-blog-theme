@@ -21,6 +21,7 @@
 
 html{
     padding:1rem;
+    background: linear-gradient(var(--background-color),var(--background-color-secondary));
 }
 
 body {
@@ -48,7 +49,7 @@ body:hover {
 
 main {
     margin-bottom: 20px;
- 	padding: 1rem 3rem;
+ 	padding: 1rem 4rem;
   	border-top: 1px solid var(--text-color);
     font-size: 1.1rem;
     background-color:var(--background-color)
@@ -100,6 +101,7 @@ li::marker {
     border:1px solid rgb(182, 214, 231);
     border-radius: 4px 4px 0 0;
     text-shadow:  1px 1px 10px var(--background-color);
+    outline: 1px solid;
 }
 
 .title h1 {
@@ -175,12 +177,23 @@ nav p.close a{
     width: 100%;
 }
 
+p.close:hover {
+  box-shadow: 0px 0px 7px 1px #cc5641;
+}
+
 nav p.close a:hover{
     background: initial;
 }
 
 p{
     margin:25px 0px;
+    line-height: calc(1ex / 0.32);
+    font-size: 1.13rem;
+}
+
+time {
+  font-style: normal;
+  opacity: 0.8;
 }
 
 del {
@@ -475,6 +488,35 @@ color: var(--text-color);
   color: var(--text-color);
 }
 
+/*Crossword styles*/
+
+.crss {
+  overflow: scroll;
+}
+
+.crss table {
+  table-layout: fixed;
+  width: min-content;
+}
+
+.crss table, .crss tr, .crss td, .crss th {
+  border: 2px solid;
+}
+
+.crss tr {
+  height: 30px;
+}
+
+.crss th {
+  width: 30px;
+  font-weight: normal;
+}
+
+.crss :is(td, th):not(:empty, :has(> sub)) {
+  background: var(--text-color);
+}
+
+
 /*End notes styles*/
 
 .end-notes::before {
@@ -492,6 +534,10 @@ color: var(--text-color);
     margin: .5rem 0;
     border-radius: 3px;
     position: relative;
+}
+
+html[lang="es"] .end-notes::before {
+  content: '[Notas finales]';
 }
 
 footer {
@@ -525,6 +571,7 @@ footer a:visited {
 }
 
 @media only screen and (max-width:767px) {
+
     main {
         margin-bottom: 10px;
       	padding: 20px 15px;
@@ -576,4 +623,8 @@ footer a:visited {
   	.pl thead {
 		background: linear-gradient(transparent ,var(--shadow-theader-color) 99%);
 	}
+  
+  .title{
+  	outline: none;
+  }
 }
